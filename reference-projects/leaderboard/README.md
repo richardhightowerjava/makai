@@ -49,7 +49,7 @@ in the case of exposing the service 'on the wire'.
 @Export says put me on the wire. This makes the service available via remoting protocols, websockets being the
 one we care about in this case.
 
-'''java
+```java
 package com.caucho.makai.example;
 
 import io.makai.core.Export;
@@ -99,7 +99,7 @@ public class LeaderboardService {
     }
 
 }
-'''
+```
 
 The BoardEntry is a simple pojo/model bean, probably not worth discussing.
 
@@ -118,7 +118,7 @@ There's even less to the front end. Most of the "work" is probably in the makai.
 providing the namespace MAKAI for simplifying access to the Makai services.
 
 The most interesting part is the MAKAI library websocket initializer.
-'''javascript
+```javascript
 //Open a websocket connection to the Makai service
 /**
  *   Register the websocket, which returns a deferred,
@@ -148,23 +148,23 @@ MAKAI.Server
             console.log("oops");
         });
 
-'''
+```
 
 Basically we are passing the url we want the websocket to talk to.
 
-'''javascript
+```javascript
    var wssUrl = "ws://localhost:8080/leaderboard/jamp";
-'''
+```
 This is the url that is hosting
 the jamp servlet. Once that websocket is in place, the rest is just talking to the services hosted
 on it, in this case leaderboardService. For this app, as soon as the socket is available we want
 to go ahead and list the contents in the leaderboard.
 
-'''javascript
+```javascript
 function list() {
     MAKAI.Server.invokeMakaiMethod("/leaderboardService", "list", updateScoreboard);
 }
-'''
+```
 
 That's pretty straightforward.  Invoke some backend makai method, in this case "list", and when you get
 a response, invoke updateScoreboard with the data that came back. The updateScoreboard method is just
