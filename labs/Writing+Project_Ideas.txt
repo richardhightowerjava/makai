@@ -1,0 +1,105 @@
+Ideas for Makai
+
+Questions:
+	* Is RFC/JSR still an interest?
+	* If using this as a plugin, how do we manage that?  The core concepts seem reusable across servlet containeres, in this case you just get the libs and that's part of the plugin dependencies?
+	
+	
+Reference Projects:
+	* Maven archetype for generating a Makai simple project
+
+	* Chat or other PTP with Makai
+	** Simple concepts, simplest implementation
+	** Shows basics of Makai usage
+
+	* Spring Pet Clinic as Makai implementation.  Performance characteristics/comparison assessment.
+	** Shows how to implement "enterprise" type app that most java devs are familiar with by Spring's example
+	** Provides a/b analysis (code style, framework usage, capacity testing)
+	** Adoption-related
+
+	* CRUD with Makai
+	** May be usurped by pet clinic?
+
+	* OLTP with Makai
+	** Expresses how to handle transaction processing
+	** Possibly show how and where to map in potentially long-running vendor dependencies
+
+	- OLTP and CRUD could possibly work together - internal and external services against a common "data store".  Very typical real world use case.
+
+	* Analytics collector/processor for real-time analysis sample POC
+	** Demonstrates heavy lifting in the Makai/biz logic tier
+	** Demonstrates handling of high volume incoming messages
+
+Overview:
+
+	* What is it? (simplified CEO/CIO case)
+	** simple
+	** fast
+	
+	* Where do I stick it? (CTO/VPE case)
+	** oltp
+	** page serving
+	** data collection
+	
+	* Actor Model for Noobs
+	* Ring Buffer for Noobs
+	* Getting Started (git pointers or whatever)
+	
+	
+Tutorials:
+	
+	* Your first service (use case?)
+	* Your first client (use case?)
+	* Unit Testing Makai
+	* Calculating memory footprint
+	* Load testing Makai
+	* Where's my data? 
+	** How Makai persistence works
+	** Syncing to mongo or mysql
+	
+
+User Guides:
+	* Makai is for... (expanded version of the overview 'what is it' articles)
+	** Ecology of an enterprise system, where Makai fits
+	** Economics of server capacity and horizontal scaling (I see Makai as a form of vertical scaling...we're raising the roof)
+	** Simplified development, shortened dev cycles
+	** All of this goes to a solid "bottom line" argument
+	
+	* Makai for the impatient (quickstart)
+	** Annotations
+	** Downloadable kickstart code
+	** Expressive samples
+	
+	* Makai for the curious (this might go better under documentation)
+	** Mostly architecture, diagrams of:
+	*** Life cycle
+	*** Ring buffer operation
+	*** Journaling
+		
+	* Makai to the bone
+	** Command line tools
+	** Monitoring tools
+	
+	* Scaling Makai
+	
+	
+Documentation:
+
+	* Annotations
+	* Wire protocol
+	* Persistence
+	* Journaling
+	* Replication
+	* Fault tolerance
+	* Sharding
+	* DR (broadcast cross-datacenter)	
+	
+Misc Dev Ideas:
+
+	* Adoption
+	** Play framework module
+	** Spring framework module
+	
+	
+	
+	

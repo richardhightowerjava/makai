@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	
+	<!-- Master Page Layout -->
+	<definition name="page" template="/WEB-INF/layouts/page.jsp"/>
+
+	<!-- Application Home -->
+	<definition name="home" extends="page">
+        <put-attribute name="title" value="Welcome to Petcare" type="string" />
+        <!--put-attribute name="scripts" value="" /--><!-- Just don't blow up for gods sake -->
+		<put-attribute name="content" value="/WEB-INF/views/home.jsp" type="template" />
+        <put-list-attribute name="scripts">
+            <add-attribute value="jquery/ui/jquery-ui.min.js" />
+        </put-list-attribute>
+        <put-list-attribute name="styles">
+            <add-attribute value="jquery/ui/themes/base/jquery-ui.css" />
+        </put-list-attribute>
+	</definition>
+
+</tiles-definitions>

@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="tasks">
+    <output-path>$USER_HOME$/resin7src/resin/webapps/</output-path>
+    <root id="archive" name="tasks.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="taskListService" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="model-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="model" />
+          </element>
+        </element>
+      </element>
+      <element id="dir-copy" path="$PROJECT_DIR$/taskListService/src/main/webapp" />
+    </root>
+  </artifact>
+</component>

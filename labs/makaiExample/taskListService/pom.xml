@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <artifactId>taskListService</artifactId>
+    <packaging>war</packaging>
+
+    <parent>
+        <artifactId>examples</artifactId>
+        <groupId>io.makai.example</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+
+
+    <dependencies>
+        <dependency>
+            <artifactId>model</artifactId>
+            <groupId>io.makai.example</groupId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.caucho.resin</groupId>
+            <artifactId>resin</artifactId>
+            <version>7.0-snap</version>
+            <scope>system</scope>
+            <systemPath>/Users/cmathias/chris/dev/jamp/resin7/resin-7.0.0/lib/resin.jar</systemPath>
+        </dependency>
+        <!--dependency>
+            <groupId>com.caucho.resin</groupId>
+            <artifactId>makai</artifactId>
+            <version>7.0-snap</version>
+            <scope>system</scope>
+            <systemPath>/Users/rick/resin7src/resin/lib/makai.jar</systemPath>
+        </dependency-->
+
+    </dependencies>
+
+
+
+
+</project>

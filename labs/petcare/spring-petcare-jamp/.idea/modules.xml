@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../makaiExample/examples.iml" filepath="$PROJECT_DIR$/../../makaiExample/examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../makaiExample/taskListService/src/main/main.iml" filepath="$PROJECT_DIR$/../../makaiExample/taskListService/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../makaiExample/taskListModel/src/main/main1.iml" filepath="$PROJECT_DIR$/../../makaiExample/taskListModel/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../makai/makai/makai.iml" filepath="$PROJECT_DIR$/../../makai/makai/makai.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/makaiExample/makaiExample.iml" filepath="$USER_HOME$/Downloads/makaiExample/makaiExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../makaiExample/taskListModel/model.iml" filepath="$PROJECT_DIR$/../../makaiExample/taskListModel/model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-petcare-jamp.iml" filepath="$PROJECT_DIR$/spring-petcare-jamp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../makaiExample/taskListService/taskListService.iml" filepath="$PROJECT_DIR$/../../makaiExample/taskListService/taskListService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../makaiExample/taskListModel/src/test/test.iml" filepath="$PROJECT_DIR$/../../makaiExample/taskListModel/src/test/test.iml" />
+    </modules>
+  </component>
+</project>
+

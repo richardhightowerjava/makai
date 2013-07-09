@@ -1,0 +1,1236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" name="Default" comment="" />
+    <ignored path="makaiExample.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/Task.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371262661410" ignored="false" />
+    <file path="/TaskService.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371369047235" ignored="false" />
+    <file path="/pom.xml" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284769626" ignored="false" />
+    <file path="/fragment.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284319011" ignored="false" />
+    <file path="/TaskDoer.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371263776508" ignored="false" />
+    <file path="/Group.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371264275861" ignored="false" />
+    <file path="/Person.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371264137602" ignored="false" />
+    <file path="/model.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371258713752" ignored="false" />
+    <file path="/TaskManagerTest.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371264363833" ignored="false" />
+    <file path="/TaskManager.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371262264778" ignored="false" />
+    <file path="/Utils.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371257629749" ignored="false" />
+    <file path="/Dummy.txt" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371357810218" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371259915371" ignored="false" />
+    <file path="$USER_HOME$/.m2/settings.xml" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371260739029" ignored="false" />
+    <file path="/TaskData.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371263832791" ignored="false" />
+    <file path="/OwnerRepo.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371264065856" ignored="false" />
+    <file path="/todo.html" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371370496881" ignored="false" />
+    <file path="/a.dummy" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371361693307" ignored="false" />
+    <file path="$USER_HOME$/resin7src/resin/log/jvm-app-0.log" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371270967184" ignored="false" />
+    <file path="$USER_HOME$/resin7src/resin/webapps/tasks/WEB-INF/resin-web.xml" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371369242585" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/Repos.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371283622839" ignored="false" />
+    <file path="/Repos.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371283622839" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/SearchableCollection.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371283640575" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/RepoBuilder.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371283647927" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/Repo.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371283656661" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/ObjectEditor.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371283665613" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/LookupIndex.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371283673950" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/Filter.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371283681949" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/DataRepoException.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371283691622" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/Collections.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284822329" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/CollectionDecorator.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371283712729" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/Bag.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371283722967" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/pom.xml" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371285165651" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/pom.xml" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284039734" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/benchmarks/pom.xml" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371283878521" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/utils/Types.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284004233" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/utils/Utils.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284004233" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/utils/Bits.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284004233" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/utils/Function.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284004233" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/utils/Reflection.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284008211" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/utils/Predicate.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284004233" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/utils/Supplier.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284004233" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/org/datarepo/utils/Predicate.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284039734" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/org/datarepo/utils/Function.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284039734" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/org/datarepo/utils/Bits.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284039734" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/org/datarepo/utils/Types.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371285213423" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/org/datarepo/utils/Utils.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284322110" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/org/datarepo/utils/Supplier.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284039734" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/org/datarepo/utils/Reflection.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371285213423" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/pom.xml" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284771240" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/impl/SearchableCollectionDefault.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284960933" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/org/datarepo/fields/fields/FieldAccess.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284247446" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/query/Not.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284984777" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/org/datarepo/fields/fields/ReflectField.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284247446" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/spi/ObjectEditorComposer.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284923931" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/test/java/org/datarepo/tests/CriteriaTest.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284322110" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/impl/RepoBuilderDefault.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284972812" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/org/datarepo/fields/fields/UnsafeField.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284247446" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/org/datarepo/fields/fields/PropertyField.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284247446" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/query/Selector.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284874738" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/spi/FilterComposer.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284936262" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/spi/SearchableCollectionComposer.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284849662" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/query/ProjectedSelector.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284862684" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/impl/FilterDefault.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371285008994" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/org/datarepo/fields/fields/MapField.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284247446" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/query/Criterion.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371285045732" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/query/Sort.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284895043" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/query/QueryFactory.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284996129" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/query/Query.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284835478" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/query/Group.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284948152" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/datarepo/src/main/java/org/datarepo/impl/ObjectEditorDefault.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284910884" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/org/datarepo/fields/FieldAccess.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284322110" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/org/datarepo/fields/PropertyField.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284322110" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/org/datarepo/fields/UnsafeField.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284322110" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/org/datarepo/fields/ReflectField.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284322110" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/src/main/java/org/datarepo/fields/MapField.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284322110" ignored="false" />
+    <file path="/Types.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371284566303" ignored="false" />
+    <file path="$PROJECT_DIR$/../DataRepo/utils/utils.iml" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371285173932" ignored="false" />
+    <file path="/CreateNewTask.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371357162354" ignored="false" />
+    <file path="$USER_HOME$/resin7src/resin/modules/resin/src/com/caucho/http/jamp/JampServlet.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371358085055" ignored="false" />
+    <file path="/JampServlet.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371358064314" ignored="false" />
+    <file path="$USER_HOME$/resin7src/resin/modules/resin/src/com/caucho/websocket/server/WebSocketServletImpl.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371358243739" ignored="false" />
+    <file path="/WebSocketServletImpl.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371358177103" ignored="false" />
+    <file path="$USER_HOME$/resin7src/resin/modules/resin/src/com/caucho/http/jamp/JampReader.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371358863001" ignored="false" />
+    <file path="/JampReader.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371358778961" ignored="false" />
+    <file path="$USER_HOME$/resin7src/resin/modules/resin/src/com/caucho/ramp/broker/BasicRampBroker.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371359137239" ignored="false" />
+    <file path="/BasicRampBroker.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371358949036" ignored="false" />
+    <file path="$USER_HOME$/resin7src/resin/modules/resin/src/com/caucho/ramp/actor/NullMethod.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371360518165" ignored="false" />
+    <file path="/NullMethod.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371360498774" ignored="false" />
+    <file path="$USER_HOME$/resin7src/resin/dist/resin-7.0.s130610/modules/resin/src/com/caucho/ramp/proxy/SkeletonClass.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371360583920" ignored="false" />
+    <file path="/SkeletonClass.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371360911471" ignored="false" />
+    <file path="$USER_HOME$/resin7src/resin/modules/resin/src/com/caucho/ramp/proxy/SkeletonClass.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371360920134" ignored="false" />
+    <file path="$USER_HOME$/resin7src/resin/dist/quercus-war-7.0.s130615/WEB-INF/web.xml" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371361449809" ignored="false" />
+    <file path="$USER_HOME$/resin7src/resin/dist/resin-7.0.s130615/modules/resin/src/com/caucho/ramp/actor/NullMethod.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371361449809" ignored="false" />
+    <file path="$USER_HOME$/resin7src/resin/dist/resin-7.0.s130615/modules/resin/src/com/caucho/ramp/proxy/SkeletonClass.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371361449809" ignored="false" />
+    <file path="$USER_HOME$/resin7src/resin/modules/resin/src/com/caucho/ramp/mailbox/NullMailbox.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371361779456" ignored="false" />
+    <file path="/NullMailbox.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371361777137" ignored="false" />
+    <file path="$USER_HOME$/resin7src/resin/modules/resin/src/com/caucho/server/cdi/ResinStandardPlugin.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371367625805" ignored="false" />
+    <file path="/ResinStandardPlugin.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371367462211" ignored="false" />
+    <file path="$USER_HOME$/resin7src/resin/modules/kernel/src/com/caucho/config/reflect/BaseType.java" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371367522430" ignored="false" />
+    <file path="$USER_HOME$/resin7src/resin/webapps/tasks/WEB-INF/classes/META-INF/beans.xml" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371369242585" ignored="false" />
+    <file path="/fragment.js" changelist="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" time="1371370738185" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="makaiExample" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="todo.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/taskListService/src/main/webapp/todo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="85" selection-start="0" selection-end="6523" vertical-scroll-proportion="2.048583">
+              <folding>
+                <marker date="1371370941000" expanded="true" signature="1277:1288" placeholder="..." />
+                <marker date="1371370941000" expanded="true" signature="2604:2614" placeholder="..." />
+                <marker date="1371370941000" expanded="true" signature="2723:2733" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="todo.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="http://localhost:8080/tasks/todo.html">
+          <provider selected="true" editor-type-id="httpFileEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Group.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/taskListModel/src/main/java/example/Group.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="12" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaskService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/taskListService/src/main/java/example/TaskService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="886" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Task.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/taskListModel/src/main/java/example/Task.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="60" selection-start="0" selection-end="1838" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="beans.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/taskListService/src/main/resources/META-INF/beans.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="8" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaskData.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/taskListService/src/main/java/example/TaskData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="0" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaskManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/taskListModel/src/main/java/example/TaskManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="64" selection-start="0" selection-end="1142" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#108#114#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Export.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/resin7src/resin/lib/makai.jar!/io/makai/core/Export.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="18" selection-start="421" selection-end="421" vertical-scroll-proportion="-10.56">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Service.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/resin7src/resin/lib/makai.jar!/io/makai/core/Service.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="18" selection-start="467" selection-end="467" vertical-scroll-proportion="-7.92">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/taskListModel/src/main/java/io/jamp/example/model/TaskDoer.java" />
+        <option value="$PROJECT_DIR$/taskListModel/src/main/java/io/jamp/example/model/Task.java" />
+        <option value="$PROJECT_DIR$/taskListService/src/main/java/io/makai/example/TaskData.java" />
+        <option value="$PROJECT_DIR$/taskListModel/src/main/java/io/jamp/example/model/TaskOwner.java" />
+        <option value="$PROJECT_DIR$/taskListModel/src/main/java/io/jamp/example/model/OwnerRepo.java" />
+        <option value="$PROJECT_DIR$/taskListModel/src/main/java/io/jamp/example/model/Group.java" />
+        <option value="$PROJECT_DIR$/taskListModel/src/main/java/io/jamp/example/model/Person.java" />
+        <option value="$PROJECT_DIR$/taskListModel/src/test/java/io/jamp/example/model/TaskManagerTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/taskListService/src/main/webapp/WEB-INF/resin-web.xml" />
+        <option value="$PROJECT_DIR$/taskListService/src/main/java/io/makai/example/CreateNewTask.java" />
+        <option value="$PROJECT_DIR$/taskListService/src/main/java/io/makai/example/TaskService.java" />
+        <option value="$PROJECT_DIR$/taskListService/src/main/resource/beans.xml" />
+        <option value="$PROJECT_DIR$/taskListService/src/main/webapp/todo.html" />
+        <option value="localhost:8080/tasks/todo.html" />
+        <option value="$PROJECT_DIR$/taskListService/src/main/java/example/TaskService.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$MAVEN_REPOSITORY$" />
+        <option name="userSettingsFile" value="$USER_HOME$/.m2/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="taskListService" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Dependencies" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="taskListService" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="460" />
+    <option name="y" value="22" />
+    <option name="width" value="1454" />
+    <option name="height" value="1145" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taskListService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taskListService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taskListService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taskListService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taskListService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taskListService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taskListService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taskListModel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taskListModel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taskListModel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="makaiExample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taskListModel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_directory_selection" value="$PROJECT_DIR$/model/src/test/java/io/jamp/example" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="options.lastSelected" value="MavenSettings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/taskListService/src/main/webapp" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/taskListService/src/main/resource/META-INF" />
+      <recent name="$PROJECT_DIR$/model/src/main/java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.todo.html">
+    <configuration default="false" name="TaskManagerTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="io.jamp.example.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="model" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="io.jamp.example.model" />
+      <option name="MAIN_CLASS_NAME" value="io.jamp.example.model.TaskManagerTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="todo.html" type="JavascriptDebugSession" factoryName="Local" singleton="true" temporary="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" value="file://$PROJECT_DIR$/taskListService/src/main/webapp/todo.html" />
+      </JSDebuggerConfigurationSettings>
+      <RunnerSettings RunnerId="JavascriptDebugRunner" />
+      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.TaskManagerTest" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.todo.html" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.todo.html" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TaskManagerTest" />
+      </list>
+    </recent_temporary>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="138902d1-ca4c-48d9-a71e-97bc6c3aaea7" name="Default" comment="" />
+      <created>1371244859673</created>
+      <updated>1371244859673</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="460" y="22" width="1454" height="1145" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297561" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.6" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297561" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/taskListService/src/main/webapp/todo.html</url>
+          <line>145</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>http://localhost:8080/tasks/todo.html</url>
+          <line>158</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>http://localhost:8080/tasks/todo.html</url>
+          <line>56</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>http://localhost:8080/tasks/todo.html</url>
+          <line>42</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>http://localhost:8080/tasks/todo.html</url>
+          <line>44</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>http://localhost:8080/tasks/todo.html</url>
+          <line>49</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="15" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/taskListModel/src/main/java/example/TaskOwner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="30" selection-start="209" selection-end="209" vertical-scroll-proportion="0.2670713">
+          <folding>
+            <element signature="e#99#211#0" expanded="true" />
+            <element signature="e#204#205#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taskListModel/src/main/java/example/OwnerRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="22" selection-start="94" selection-end="103" vertical-scroll-proportion="0.16691957">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taskListModel/src/main/java/example/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="756" selection-end="756" vertical-scroll-proportion="0.49535602">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taskListModel/src/test/java/io/jamp/example/model/TaskManagerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="50" selection-start="505" selection-end="505" vertical-scroll-proportion="0.6226415">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="33" selection-start="558" selection-end="558" vertical-scroll-proportion="0.41114983">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taskListService/src/main/webapp/WEB-INF/resin-web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taskListService/src/main/resources/META-INF/beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="8" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/resin7src/resin/lib/makai.jar!/io/makai/core/Service.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="18" selection-start="467" selection-end="467" vertical-scroll-proportion="-7.92">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/resin7src/resin/lib/makai.jar!/io/makai/core/Export.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="18" selection-start="421" selection-end="421" vertical-scroll-proportion="-10.56">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taskListService/src/main/java/example/TaskData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="http://localhost:8080/tasks/todo.html">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taskListModel/src/main/java/example/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="12" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taskListService/src/main/java/example/TaskService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="886" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taskListModel/src/main/java/example/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="60" selection-start="0" selection-end="1838" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taskListModel/src/main/java/example/TaskManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="64" selection-start="0" selection-end="1142" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#108#114#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taskListService/src/main/webapp/todo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="85" selection-start="0" selection-end="6523" vertical-scroll-proportion="2.048583">
+          <folding>
+            <marker date="1371370941000" expanded="true" signature="1277:1288" placeholder="..." />
+            <marker date="1371370941000" expanded="true" signature="2604:2614" placeholder="..." />
+            <marker date="1371370941000" expanded="true" signature="2723:2733" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor>
+            <show-content>
+              <type id="artifact" />
+              <type id="library" />
+              <type id="javaee-facet-resources" />
+              <type id="jpa-descriptors" />
+            </show-content>
+          </artifact-editor>
+          <last-edited>tasks</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>taskListService</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.caucho.resin:resin:7.0-snap</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+

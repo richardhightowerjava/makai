@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/makaiExample.iml" filepath="$PROJECT_DIR$/makaiExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taskListModel/model.iml" filepath="$PROJECT_DIR$/taskListModel/model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taskListService/taskListService.iml" filepath="$PROJECT_DIR$/taskListService/taskListService.iml" />
+    </modules>
+  </component>
+</project>
+

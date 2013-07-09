@@ -1,0 +1,149 @@
+<html>
+<head>
+    <style>
+        #leaderboardWrapper {
+            text-align: center;
+        }
+        #leaderBoard {
+            width: 250px;
+            padding: 3px;
+            margin: auto;
+        }
+        .delete {
+            float: left;
+            width: 20px;
+            margin: auto;
+        }
+        .entryWrapper {
+            float: left;
+            padding: 5px;
+            border: black dotted thin;
+        }
+        .participant {
+            float: left;
+            text-align: left;
+            padding: 3px;
+            width: 110px;
+        }
+        .score {
+            float: right;
+            text-align: left;
+            width: 50px;
+            padding: 3px;
+        }
+    </style>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/makai.js"></script>
+
+    <script type="text/javascript">
+
+        $(function() {
+            //Configure a webservice url for the Makai web service.
+            //This should be respective to the contents of your resin-web.xm
+            //configuration of the JampServlet
+            var wssUrl = "ws://localhost:8080/leaderboard/jamp";
+
+            //Open a websocket connection to the Makai service
+            /**
+             *   Register the websocket, which returns a deferred,
+             *   and add an 'initializer methods the app requires for
+             *   backend communication once the url is open.
+             */
+            /**
+             *  Aside from the wssUrlThis object can have configured callbacks via additional
+             * parameter, including
+             * {
+             *      logNode: a div reference where you want log messages to spit out, in addition to console
+             *      onMessage: function,
+             *      onError: function,
+             *      onOpen: function,
+             *      onClose: function
+             * }
+             */
+            var options = { logNode: '#messages'};
+            MAKAI.Server
+                    .registerSocket(wssUrl, options)
+                    .done(function() {
+                        //Socket is open, get the initial list.
+                        //"list" is a method in the LeaderboardService.java which returns all active data.
+                        list();
+                    })
+                    .fail(function() {
+                        console.log("oops");
+                    });
+
+            /**
+             * Misc plumbing/event handling
+             */
+
+            /** Add new board entry **/
+            $('#addParticipantButton').on('click', function() {
+                add();
+            });
+
+        });
+
+        function list() {
+            MAKAI.Server.invokeMakaiMethod("/leaderboardService", "list", updateScoreboard);
+        }
+
+        function add() {
+            var participant = $('#participantInput').val();
+            var score = $('#scoreInput').val();
+            if (isNaN(score )) {
+                alert("Invalid score. Try again.");
+                return false;
+            }
+            var newEntry = {};
+            newEntry.participant = participant;
+            newEntry.score = new Number(score);
+
+            MAKAI.Server.invokeMakaiMethod("/leaderboardService", "addBoardEntry", updateScoreboard, newEntry);
+        }
+
+        function removeBoardEntry(participantName) {
+            var discardPile = {};
+            discardPile.participant = participantName;
+            MAKAI.Server.invokeMakaiMethod("/leaderboardService", "removeBoardEntry", updateScoreboard, discardPile);
+        }
+
+        function updateScoreboard(scoreBoard) {
+            $('#leaderBoard').empty();
+            $.each(scoreBoard, function(index, boardEntry) {
+                $('#leaderBoard').append(
+                        '<div class="entryWrapper">' +
+                                '<div class="delete" onclick="removeBoardEntry(\'' + boardEntry.participant + '\')" style="cursor: pointer">X</div>' +
+                                '<div class="participant">' + boardEntry.participant + ': </div>' +
+                                '<div class="score">' + boardEntry.score + '</div>' +
+                                '</div><br />'
+                );
+            });
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <div id="leaderboardWrapper">
+        <h3>Makai Leaderboard Example</h3>
+        <div id="leaderBoard">
+
+        </div>
+    </div>
+    <br />
+    <div style="clear: both">
+        <form onsubmit="return false">
+            <label for="participantInput">Participant:</label>
+            <input type="text" id="participantInput" name="participantInput" placeholder="enter name" />
+            <label for="participantInput">Score:</label>
+            <input type="text" id="scoreInput" name="scoreInput" placeholder="enter score" />
+            <button id="addParticipantButton">add/update</button>
+        </form>
+    </div>
+    <br />
+    <hr/>
+    <div id="messages" style="margin: auto; clear: both"></div>
+</body>
+</html>

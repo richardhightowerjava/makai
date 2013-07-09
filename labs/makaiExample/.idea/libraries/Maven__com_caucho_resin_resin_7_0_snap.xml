@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Maven: com.caucho.resin:resin:7.0-snap">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/resin7src/resin/lib/resin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

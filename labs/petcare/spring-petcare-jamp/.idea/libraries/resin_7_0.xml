@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="resin-7.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../resin7/resin-7.0.0/lib/resin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

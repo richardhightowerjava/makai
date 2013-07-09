@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="taskListService:war">
+    <output-path>$PROJECT_DIR$/../../makaiExample/taskListService/target</output-path>
+    <root id="archive" name="taskListService-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="taskListService:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,24 @@
+PetCare Notes
+
+This is what I had to do to get pet care running on Resin server and adapt it to this project.
+
+
+* Dependency modifications to satisfy EL classes
+	pom.xml
+	<!-- Don't force tomcat 6 dependency -->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>jasper-el</artifactId>
+            <version>6.0.13</version>
+        </dependency>
+		
+		
+* Fix petcare home page issues (expecting "scripts" attribute)
+
+* Hacked out spring security
+
+* Did "push in" refactor of ROO content
+
+TODO * Created JAMP services for existing controller entities.
+TODO * Got unit tests functional with JAMP entities
+TODO * Modified front end to work with JAMP for backend communication

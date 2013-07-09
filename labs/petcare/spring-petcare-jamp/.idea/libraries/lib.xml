@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../makaiExample/taskListService/target/taskListService-1.0-SNAPSHOT/WEB-INF/lib/model-1.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../makaiExample/taskListService/target/taskListService-1.0-SNAPSHOT/WEB-INF/lib/junit-4.8.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
