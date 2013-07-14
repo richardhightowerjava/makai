@@ -1,4 +1,7 @@
 <web-app xmlns="http://caucho.com/ns/resin">
     <servlet-mapping url-pattern="/jamp"
                      servlet-class="com.caucho.http.jamp.JampServlet"/>
+
+    <path-mapping url-pattern='/common/*'
+                  real-path='../common'/>
 </web-app>
