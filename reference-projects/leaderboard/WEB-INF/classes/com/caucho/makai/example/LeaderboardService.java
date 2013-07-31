@@ -1,13 +1,13 @@
 package com.caucho.makai.example;
 
-import io.makai.core.Export;
+import io.makai.core.Remote;
 import io.makai.core.Service;
 
 import java.util.*;
 import java.util.logging.Logger;
 
 @Service("/leaderboardService")
-@Export
+@Remote
 public class LeaderboardService {
 
     private Logger logger = Logger.getLogger("LeaderboardService");
