@@ -9,9 +9,15 @@ MAKAI = window.MAKAI || {};
 
 MAKAI.Server = (function() {
     var server = {};
+    var client = {};
 
-    var messageId = 0;
-    var makaiSocket = undefined;
+    client.messageId = 0;
+    client.makaiSocket = undefined;
+    client.serverInvocationFromServerAddress = undefined;
+
+    //This is expected to have a signature of function(serverMethodNameThatGeneratedData, generatedData);
+    client.serverMessagesCallbackFunction = undefined;
+
     var callQueue = [];
 
     var defaultLogNode = "#messages";
@@ -31,6 +37,9 @@ MAKAI.Server = (function() {
         }
     }
 
+
+    /** server.XXX are the API methods here **/
+
     /**
      * The following are websocket connection support functions.
      *
@@ -45,7 +54,7 @@ MAKAI.Server = (function() {
      *      onClose: function
      * }
      */
-    server.registerSocket = function(wsUrl, options) {
+    server.registerSocket = function(wsUrl, options, serverMessages) {
 
         var registered = new $.Deferred();
 
@@ -59,9 +68,10 @@ MAKAI.Server = (function() {
         var onOpen = options.onOpen;
         var onClose = options.onClose;
 
-        makaiSocket = new WebSocket(wsUrl);
+        client.serverMessagesCallbackFunction = serverMessages;
+        client.makaiSocket = new WebSocket(wsUrl);
 
-        makaiSocket.onmessage = function(messageEvent) {
+        client.makaiSocket.onmessage = function(messageEvent) {
             log("socket.onmessage:", messageEvent);
 
             //Parse response
@@ -76,7 +86,7 @@ MAKAI.Server = (function() {
                 var call = callQueue[incomingMessageId];
 
                 if (call && messageEvent.returnValue) {
-                    call.callback(data);
+                    if (call.callback) call.callback(data);
                     delete callQueue[incomingMessageId];
                 } else {
                     throw Error("Unable to locate a call in the queue waiting for message id " + incomingMessageId
@@ -89,6 +99,10 @@ MAKAI.Server = (function() {
             } else if (responseType == "error") {
                 var errorMsg = list[6];
                 log("Problem Occurred!" + data + " - " + errorMsg);
+            } else if (responseType == "send") {
+                if (client.serverMessagesCallbackFunction) {
+                    client.serverMessagesCallbackFunction(incomingMessageId, data);
+                }
             } else {
                 //TODO: What else?
                 log("response type not accounted for:" + data);
@@ -96,25 +110,36 @@ MAKAI.Server = (function() {
 
         }
 
-        makaiSocket.onerror = function(errorEvent) {
+        client.makaiSocket.onerror = function(errorEvent) {
             log("socket.onerror:", errorEvent);
             if (onError) {
                 onError(errorEvent);
             }
             registered.reject(server.webSocket);
+            if (getMeDeferred) {
+                getMeDeferred.reject();
+            }
         }
 
-        makaiSocket.onopen = function() {
+        client.makaiSocket.onopen = function() {
             log("socket.onopen: Opened successfully, we can assume");
-            if (onOpen) {
-                onOpen();
-            }
-            registered.resolve(server.webSocket);
+
+            //get a handle to local address from server perspective.
+            getMe()
+                .done(function() {
+                    if (onOpen) {
+                        onOpen();
+                    }
+                    registered.resolve(server.webSocket);
+                }).fail(function() {
+                    //then what?
+                });
+
         }
-        makaiSocket.onclose = function(closeEvent) {
+        client.makaiSocket.onclose = function(closeEvent) {
             log("socket.onclose:", closeEvent);
             if (keepAlive) {
-                makaiSocket = new WebSocket(wsUrl);
+                client.makaiSocket = new WebSocket(wsUrl);
             } else {
                 if (onClose) {
                     onClose(closeEvent);
@@ -122,22 +147,42 @@ MAKAI.Server = (function() {
             }
         }
 
-        server.webSocket = makaiSocket;
+        server.webSocket = client.makaiSocket;
 
         return registered;
 
     }
 
+    server.registerClientListener = function(serviceAddress, methodToCall) {
+        //Request notification (register for) certain methods
+        server.sendServerMakaiMessage(serviceAddress, methodToCall, undefined, client.serverInvocationFromServerAddress);
+    }
+
     server.sendServerMakaiMessage = function(serviceName, methodName, callback, args) {
-        invokeMakai("send", serviceName, methodName, callback, args);
+        var config = {
+            messageType: "send",
+            serviceName: serviceName,
+            methodName: methodName,
+            callback: callback,
+            arguments: args
+        }
+        invokeMakaiSend(config);
 
     }
 
     server.invokeMakaiMethod = function(serviceName, methodName, callback, args) {
-        invokeMakai("query", serviceName, methodName, callback, args);
+        var config = {
+            messageType: "query",
+            serviceName: serviceName,
+            methodName: methodName,
+            callback: callback,
+            arguments: args
+        }
+        invokeMakaiQuery(config);
     }
 
-    function invokeMakai(messageType, serviceName, methodName, callback, args) {
+    /** Private Methods **/
+    function invokeMakaiQuery(config) {
 
 
         /**
@@ -145,27 +190,39 @@ MAKAI.Server = (function() {
          String address, String methodName, Object[] args)
          */
 
-        var thisMessageId = messageId++;
+        var thisMessageId = client.messageId++;
         var list = [];
-        list.push(messageType);         //query
+        list.push(config.messageType);         //query or send
         list.push({});              //rampHeaders
         list.push("me");            //fromAddress
         list.push(thisMessageId);   //qid
-        list.push(serviceName);     //address
-        list.push(methodName);      //methodName
-        list.push(args);
+        list.push(config.serviceName);     //address
+        list.push(config.methodName);      //methodName
+        list.push(config.arguments);
 
-//        if (args) {
-//            for (var index=0; index < args.length; index++) {
-//                var obj = args[index];
-//                list.push(obj);
-//            }
-//        }
+        log("Sending[" + thisMessageId + "]:", list);
+        if (client.makaiSocket.readyState == WebSocket.OPEN) {
+            client.makaiSocket.send(JSON.stringify(list));
+            addCall(thisMessageId, config.callback);
+        } else {
+            log("Unable to communicate with web socket: " + server.webSocket.readyState);
+        }
+    }
 
-        log("Sending:", list);
-        if (makaiSocket.readyState == WebSocket.OPEN) {
-            makaiSocket.send(JSON.stringify(list));
-            addCall(thisMessageId, callback);
+    function invokeMakaiSend(config) {
+
+        var thisMessageId = client.messageId++;
+        var list = [];
+        list.push(config.messageType);         //query or send
+        list.push({});              //rampHeaders
+        list.push(config.serviceName);     //address
+        list.push(config.methodName);      //methodName
+        list.push(config.arguments);
+
+        log("Sending[" + thisMessageId + "]:", list);
+        if (client.makaiSocket.readyState == WebSocket.OPEN) {
+            client.makaiSocket.send(JSON.stringify(list));
+            addCall(thisMessageId, config.callback);
         } else {
             log("Unable to communicate with web socket: " + server.webSocket.readyState);
         }
@@ -178,6 +235,28 @@ MAKAI.Server = (function() {
         };
 
         callQueue[id]=call;
+    }
+
+    /**
+     * This is to get my "reply address" to be used for callback registrations so the server
+     * has knowledge of an address to invoke. This allows to register for "events".
+     *
+     * This is a convenience to simplify adding callbacks on the client side.
+     */
+    var getMeDeferred;
+    function getMe() {
+        //Need to get the address from the server
+        //Then call publishChannel with the channel being channel: + me address
+        getMeDeferred = new $.Deferred();
+        MAKAI.Server.invokeMakaiMethod("channel:", "publishChannel", registerReturned, "/reply-address");
+        return getMeDeferred;
+    }
+
+    function registerReturned(data) {
+        //Retreive and store my local address from server perspective.
+        client.serverInvocationFromServerAddress = data;
+        log("Client side address" + client.serverInvocationFromServerAddress);
+        getMeDeferred.resolve();
     }
 
     return server;

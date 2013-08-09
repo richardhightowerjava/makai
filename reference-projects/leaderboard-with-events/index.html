@@ -1,0 +1,172 @@
+<html>
+<head>
+    <style>
+        #leaderboardWrapper {
+            text-align: center;
+        }
+        #leaderBoard {
+            width: 250px;
+            padding: 3px;
+            margin: auto;
+        }
+        .delete {
+            float: left;
+            width: 20px;
+            margin: auto;
+        }
+        .entryWrapper {
+            float: left;
+            padding: 5px;
+            border: black dotted thin;
+        }
+        .participant {
+            float: left;
+            text-align: left;
+            padding: 3px;
+            width: 110px;
+        }
+        .score {
+            float: right;
+            text-align: left;
+            width: 50px;
+            padding: 3px;
+        }
+    </style>
+
+    <script type="text/javascript" src="common/js/jquery.min.js"></script>
+    <script type="text/javascript" src="common/js/makai.js"></script>
+
+    <script type="text/javascript">
+
+        $(function() {
+            //Configure a webservice url for the Makai web service.
+            //This should be respective to the contents of your resin-web.xm
+            //configuration of the JampServlet
+            var wssUrl = "ws://localhost:8080/leaderboard-with-events/jamp";
+
+            //Open a websocket connection to the Makai service
+            /**
+             *   Register the websocket, which returns a deferred,
+             *   and add an 'initializer methods the app requires for
+             *   backend communication once the url is open.
+             */
+            /**
+             *  Aside from the wssUrlThis object can have configured callbacks via additional
+             * parameter, including
+             * {
+             *      logNode: a div reference where you want log messages to spit out, in addition to console
+             *      onMessage: function,
+             *      onError: function,
+             *      onOpen: function,
+             *      onClose: function
+             * }
+             */
+            var options = { logNode: '#messages'};
+            MAKAI.Server
+                    .registerSocket(wssUrl, options, serverMessages)
+                    .done(function() {
+                        //Socket is open, get the initial list.
+                        //"list" is a method in the LeaderboardService.java which returns all active data.
+                        list();
+
+                        // Register a listener for callbacks fired in the service.
+                        // Note: This does NOT trigger any events or server responses, it just registers this
+                        // connection with the service class which can subsequently notify this page of certain events.
+                        MAKAI.Server.registerClientListener("/leaderboardServiceEvents", "addCallback");
+                    })
+                    .fail(function() {
+                        console.log("oops");
+                    });
+
+            /**
+             * Misc plumbing/event handling
+             */
+
+            /** Add new board entry **/
+            $('#addParticipantButton').on('click', function() {
+                add();
+            });
+
+
+        });
+
+
+        /**
+         * So there is an interesting note around how callbacks are delivered from the server
+         * and how we expect the client to handle them. Basically it seems that if we have
+         * registered for server messages ala "MAKAI.Server.registerClientListener" then we should
+         * probably need to have a "front controller" type of function listener for those "send" responses
+         * from the server and decide what to do with them by wrapper type or some sub content therein -
+         * the implementation will drive this.
+         * @param data
+         */
+        function serverMessages(method, data) {
+            console.log("server side method " + method + " returned ", data);
+            if (method == "messageFromServer") {
+                updateScoreboard(data);
+            }
+        }
+
+        /** These are the CRUD functions **/
+        function list() {
+            MAKAI.Server.invokeMakaiMethod("/leaderboardServiceEvents", "list", updateScoreboard);
+        }
+
+        function add() {
+            var participant = $('#participantInput').val();
+            var score = $('#scoreInput').val();
+            if (isNaN(score )) {
+                alert("Invalid score. Try again.");
+                return false;
+            }
+            var newEntry = {};
+            newEntry.participant = participant;
+            newEntry.score = new Number(score);
+
+            MAKAI.Server.invokeMakaiMethod("/leaderboardServiceEvents", "addBoardEntry", undefined, newEntry);
+        }
+
+        function removeBoardEntry(participantName) {
+            var discardPile = {};
+            discardPile.participant = participantName;
+            MAKAI.Server.invokeMakaiMethod("/leaderboardServiceEvents", "removeBoardEntry", undefined, discardPile);
+        }
+
+        function updateScoreboard(scores) {
+            $('#leaderBoard').empty();
+            $.each(scores, function(index, boardEntry) {
+                $('#leaderBoard').append(
+                        '<div class="entryWrapper">' +
+                                '<div class="delete" onclick="removeBoardEntry(\'' + boardEntry.participant + '\')" style="cursor: pointer">X</div>' +
+                                '<div class="participant">' + boardEntry.participant + ': </div>' +
+                                '<div class="score">' + boardEntry.score + '</div>' +
+                                '</div><br />'
+                );
+            });
+        }
+
+    </script>
+
+</head>
+<body>
+    <div id="leaderboardWrapper">
+        <h3>Makai Leaderboard Example</h3>
+        <div id="leaderBoard">
+
+        </div>
+    </div>
+    <br />
+    <div style="clear: both">
+        <form onsubmit="return false">
+            <label for="participantInput">Participant:</label>
+            <input type="text" id="participantInput" name="participantInput" placeholder="enter name" />
+            <label for="participantInput">Score:</label>
+            <input type="text" id="scoreInput" name="scoreInput" placeholder="enter score" />
+            <button id="addParticipantButton">add/update</button>
+        </form>
+    </div>
+    <br />
+    <hr/>
+    <div id="messages" style="margin: auto; clear: both"></div>
+</body>
+</html>
