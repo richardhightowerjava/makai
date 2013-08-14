@@ -1,0 +1,50 @@
+<component name="libraryTable">
+  <library name="resin">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/cdi-7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/classmate-0.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/eclipse-compiler.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/eclipselink-2.4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/ecmascript.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/gae.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/hessian.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/hibernate-validator-5.0.1.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/j2ee-management-10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/javaee-7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/javamail-141.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/javax.faces-2.1.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/jaxstream-15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/jboss-logging-3.1.1.GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/jcache-7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/jdom-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/json-7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/jsr173_1.0_api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/jsr88.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/junit-4.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/log4j-1.2.14.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/makai.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/neethi-2.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/quercus.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/resin-eclipselink.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/resin-kernel.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/resin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/smack.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/smackx-debug.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/smackx-jingle.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/smackx.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/swing-layout-1.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/trang.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/validation-api-1.1.0.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/webservices-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/webservices-extra-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/webutil.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/wsdl4j-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/xml-resolver-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../caucho/resin/lib/XmlSchema-1.3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
