@@ -11,17 +11,17 @@ import java.util.logging.Logger;
 @Remote
 public class LeaderboardService {
 
-    private Logger logger = Logger.getLogger("LeaderboardService");
+    private Logger logger = Logger.getLogger("LeaderboardService for events");
 
     public LeaderboardService() {
-        logger.info("LeaderboardService Instantiated");
+        logger.info("LeaderboardService for events instantiated");
     }
+
+
 
     /** CALLBACK WORK **/
 
     private List<Callback> callbacks = new ArrayList<>();
-
-    //TODO: Ask rick about this @Service Callback cb I totally don't get this.
 
     public void addCallback(@Service Callback cb) {
         logger.info("Callback added.");

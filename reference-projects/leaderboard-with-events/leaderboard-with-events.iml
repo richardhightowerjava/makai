@@ -9,6 +9,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="resin" level="project" />
+    <orderEntry type="library" name="makai" level="project" />
   </component>
 </module>
 
