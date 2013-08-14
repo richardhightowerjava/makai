@@ -22,8 +22,6 @@ to the client in response to a non-client-generated event.  This all happens in 
 The details in the library for managing this look like:
 
 ```javascript
-var registered = new $.Deferred();
-
 //get a handle to local address from server perspective.
 getMe();
 
@@ -90,7 +88,7 @@ public interface Callback {
 ```
 Not too much to it - it's really just a data wrapper for knowing on the client what type of message was coming
 back, and a data holder (List<BoardEntry entries) for the deserialization to a JSON/javascript response.  If you noticed
-above in the serverMessages, we are looking explicitly for 'messagesFromServer' - since the server response will
+above in the serverMessages, we are looking explicitly for 'messageFromServer' - since the server response will
 tell the client that this is the "method invoked" and the parameters to the method are the data.
 
 So now that we have a way to plumb responses to the client we need a way to invoke it.
