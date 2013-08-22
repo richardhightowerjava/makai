@@ -1,0 +1,241 @@
+<html>
+<head>
+
+    <style>
+        #leaderboardWrapper {
+            text-align: center;
+        }
+        #leaderBoard {
+            width: 250px;
+            padding: 3px;
+            margin: auto;
+        }
+        .delete {
+            float: left;
+            width: 20px;
+            margin: auto;
+        }
+        .entryWrapper {
+            float: left;
+            padding: 5px;
+            border: black dotted thin;
+        }
+        .participant {
+            float: left;
+            text-align: left;
+            padding: 3px;
+            width: 110px;
+        }
+        .score {
+            float: right;
+            text-align: left;
+            width: 50px;
+            padding: 3px;
+        }
+    </style>
+
+    <link href="/common/thirdparty/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="/common/thirdparty/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/common/thirdparty/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/common/js/makai.js"></script>
+
+    <script type="text/javascript">
+
+        var user = undefined;
+
+        $(function() {
+            //Configure a webservice url for the Makai web service.
+            //This should be respective to the contents of your resin-web.xm
+            //configuration of the JampServlet
+            var wssUrl = "ws://localhost:8080/chatroom/jamp";
+
+            //Open a websocket connection to the Makai service
+            /**
+             *   Register the websocket, which returns a deferred,
+             *   and add an 'initializer methods the app requires for
+             *   backend communication once the url is open.
+             */
+            /**
+             *  Aside from the wssUrlThis object can have configured callbacks via additional
+             * parameter, including
+             * {
+             *      logNode: a div reference where you want log messages to spit out, in addition to console
+             *      onMessage: function,
+             *      onError: function,
+             *      onOpen: function,
+             *      onClose: function
+             * }
+             */
+            var options = { logNode: '#messages'};
+            MAKAI.Server
+                    .registerSocket(wssUrl, options, serverMessages)
+                    .done(function() {
+                        //Socket is open, get the initial list.
+                        //Check to see if there is a user yet, if not, force one.
+                        if (user == undefined) {
+                            $('#userModalWrapper').modal();
+                            $('#showChatsList').on('click', list);
+                        } else {
+                            //"" is a method in the ChatroomService.java which returns all active data.
+                           list();
+                        }
+
+
+                        // Register a listener for callbacks fired in the service.
+                        // Note: This does NOT trigger any events or server responses, it just registers this
+                        // connection with the service class which can subsequently notify this page of certain events.
+                        MAKAI.Server.registerClientListener("/leaderboardServiceEvents", "addCallback");
+                    })
+                    .fail(function() {
+                        console.log("oops");
+                    });
+
+            /**
+             * Misc plumbing/event handling
+             */
+
+            /** Add new board entry **/
+            $('#addParticipantButton').on('click', function() {
+                add();
+            });
+
+
+        });
+
+
+        /**
+         * So there is an interesting note around how callbacks are delivered from the server
+         * and how we expect the client to handle them. Basically it seems that if we have
+         * registered for server messages ala "MAKAI.Server.registerClientListener" then we should
+         * probably need to have a "front controller" type of function listener for those "send" responses
+         * from the server and decide what to do with them by wrapper type or some sub content therein -
+         * the implementation will drive this.
+         * @param data
+         */
+        function serverMessages(method, data) {
+            console.log("server side method " + method + " returned ", data);
+            if (method == "messageFromServer") {
+                updateScoreboard(data);
+            }
+        }
+
+        /** These are the CRUD functions **/
+        function list() {
+            MAKAI.Server.invokeMakaiMethod("/chatroomAPI", "list", updateChats);
+        }
+
+//        function add() {
+//            var participant = $('#participantInput').val();
+//            var score = $('#scoreInput').val();
+//            if (isNaN(score )) {
+//                alert("Invalid score. Try again.");
+//                return false;
+//            }
+//            var newEntry = {};
+//            newEntry.participant = participant;
+//            newEntry.score = new Number(score);
+//
+//            MAKAI.Server.invokeMakaiMethod("/chatroomService", "addBoardEntry", undefined, newEntry);
+//        }
+//
+//        function removeBoardEntry(participantName) {
+//            var discardPile = {};
+//            discardPile.participant = participantName;
+//            MAKAI.Server.invokeMakaiMethod("/chatroomService", "removeBoardEntry", undefined, discardPile);
+//        }
+
+        function updateChats(rooms) {
+            var $list = $('#chatroomList');
+            $list.empty();
+            $list.append('<table class="table">');
+            $.each(rooms, function(index, chatRoom) {
+                $list.append(
+                        '<tr>' +
+                                '<td>' + chatRoom.name + '</td>' +
+                        '</tr>'
+
+                );
+            });
+
+            $list.append('</table>');
+        }
+
+    </script>
+
+</head>
+<body style="padding: 10px">
+    <div class="page-header">
+        <h1>Chatroom Example<small>  Demonstrating @Store and friends</small></h1>
+    </div>
+    <div>
+        <div class="control-group">
+        <form class="form-inline">
+            <label>Room Name: </label>
+            <input type="text" class="input-medium" placeholder="Room Name"><button class="btn">create chat room</button>
+
+        </form>
+    </div>
+    <div id="leaderboardWrapper">
+        <div id="leaderBoard">
+
+
+            <button class="btn">list chat rooms</button> chat rooms<button class="btn">join</button>
+
+
+            listen for messages for rooms I belong to
+
+            you are a User because you made a socket connection. The socket connection should receive
+            a User and wrap it in @Service and pushes messages
+        </div>
+    </div>
+    <br />
+
+    <div id="chatroomList">
+    </div>
+
+    <div style="clear: both">
+        <form onsubmit="return false">
+            <label for="participantInput">Participant:</label>
+            <input type="text" id="participantInput" name="participantInput" placeholder="enter name" />
+            <label for="participantInput">Score:</label>
+            <input type="text" id="scoreInput" name="scoreInput" placeholder="enter score" />
+            <button id="addParticipantButton">add/update</button>
+        </form>
+    </div>
+    <br />
+    <hr/>
+    <div id="messages" style="margin: auto; clear: both"></div>
+
+
+        <div id="userModalWrapper" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <h3 id="myModalLabel">Enter a Handle (user name)</h3>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="input-medium" placeholder="user handle" />
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="showChatsList">show chats list</button>
+            </div>
+        </div>
+
+        <div id="roomModalWrapper" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="chatroomLabel">{{Chat Room Name}}</h3>
+            </div>
+            <div class="modal-body">
+                <div id="chatMessages"></div>
+                <div id="inputDiv">
+                    <textarea rows="3"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!--button class="btn" data-dismiss="modal" aria-hidden="true">Close</button-->
+                <button class="btn btn-primary">send</button>
+            </div>
+        </div>
+
+</body>
+</html>

@@ -1,6 +1,0 @@
-Callbacks get registered over every refresh. Need to somehow reconnect the client.
-Perhaps it is possible to use something to identify? Cookie?  Otherwise the
-queue of callbacks will fill up with zombies.
-...or maybe not since we only show one actual beign sent even though collection has 3.
-
-I'm not sure messaging (rq/rs) errors are being handled as errors, they come in with "error" but over the onMessage method.

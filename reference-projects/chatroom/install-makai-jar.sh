@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=../../lib/makai.jar -DgroupId=io.makai -DartifactId=makai -Dversion=1.0-M1 -Dpackaging=jar
