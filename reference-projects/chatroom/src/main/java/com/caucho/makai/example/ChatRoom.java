@@ -1,11 +1,12 @@
 package com.caucho.makai.example;
 
+import java.io.Serializable;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
-public class ChatRoom {
+public class Chatroom implements Serializable {
 
     private String id;
     private String welcomeMessage;
@@ -14,11 +15,7 @@ public class ChatRoom {
     private List<User> users = new ArrayList<>();
     private Deque<Message> messages = new ArrayDeque<>(100);
 
-    public ChatRoom() {
-
-    }
-
-    public void addMessage(Message message) {
+    public Chatroom() {
 
     }
 
@@ -52,6 +49,7 @@ public class ChatRoom {
 
     public User getCreatedBy() {
         return createdBy;
+
     }
 
     public void setCreatedBy(User createdBy) {

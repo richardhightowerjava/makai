@@ -1,11 +1,14 @@
 package com.caucho.makai.example;
 
+import java.io.Serializable;
+import java.util.Date;
+
 /**
  * Created with IntelliJ IDEA.
  * User: cmathias
- * Date: 8/19/13
- * Time: 7:32 PM
- * To change this template use File | Settings | File Templates.
  */
-public class Message {
+public class Message implements Serializable {
+    public User user;
+    public String message;
+    public Date arrived;
 }

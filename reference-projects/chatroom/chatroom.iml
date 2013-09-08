@@ -22,8 +22,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: io.makai:makai:1.0-M1" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
+    <orderEntry type="library" name="makai" level="project" />
+    <orderEntry type="module" module-name="common" />
   </component>
 </module>
 

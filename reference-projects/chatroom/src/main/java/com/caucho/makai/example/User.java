@@ -1,11 +1,30 @@
 package com.caucho.makai.example;
 
+import java.io.Serializable;
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: cmathias
- * Date: 8/19/13
- * Time: 7:32 PM
- * To change this template use File | Settings | File Templates.
  */
-public class User {
+public class User implements Serializable {
+
+    private String handle;
+    private List<Chatroom> rooms;
+
+    public String getHandle() {
+        return handle;
+    }
+
+    public void setHandle(String handle) {
+        this.handle = handle;
+    }
+
+    public List<Chatroom> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(List<Chatroom> rooms) {
+        this.rooms = rooms;
+    }
 }

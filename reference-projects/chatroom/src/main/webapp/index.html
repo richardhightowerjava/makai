@@ -1,39 +1,6 @@
 <html>
 <head>
 
-    <style>
-        #leaderboardWrapper {
-            text-align: center;
-        }
-        #leaderBoard {
-            width: 250px;
-            padding: 3px;
-            margin: auto;
-        }
-        .delete {
-            float: left;
-            width: 20px;
-            margin: auto;
-        }
-        .entryWrapper {
-            float: left;
-            padding: 5px;
-            border: black dotted thin;
-        }
-        .participant {
-            float: left;
-            text-align: left;
-            padding: 3px;
-            width: 110px;
-        }
-        .score {
-            float: right;
-            text-align: left;
-            width: 50px;
-            padding: 3px;
-        }
-    </style>
-
     <link href="/common/thirdparty/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
     <script type="text/javascript" src="/common/thirdparty/js/jquery.min.js"></script>
@@ -74,32 +41,21 @@
                         //Socket is open, get the initial list.
                         //Check to see if there is a user yet, if not, force one.
                         if (user == undefined) {
-                            $('#userModalWrapper').modal();
-                            $('#showChatsList').on('click', list);
+                            $('#userModalWrapper').modal('show');
+                            $('#showChatsList').on('click', setup);
                         } else {
-                            //"" is a method in the ChatroomService.java which returns all active data.
-                           list();
+                            setup();
                         }
 
 
                         // Register a listener for callbacks fired in the service.
                         // Note: This does NOT trigger any events or server responses, it just registers this
                         // connection with the service class which can subsequently notify this page of certain events.
-                        MAKAI.Server.registerClientListener("/leaderboardServiceEvents", "addCallback");
+                        //MAKAI.Server.registerClientListener("/chatroomAPI", "registerActiveRoomWithUser");
                     })
                     .fail(function() {
                         console.log("oops");
                     });
-
-            /**
-             * Misc plumbing/event handling
-             */
-
-            /** Add new board entry **/
-            $('#addParticipantButton').on('click', function() {
-                add();
-            });
-
 
         });
 
@@ -120,10 +76,30 @@
             }
         }
 
-        /** These are the CRUD functions **/
-        function list() {
-            MAKAI.Server.invokeMakaiMethod("/chatroomAPI", "list", updateChats);
+        function setup() {
+
+            /**
+             * Misc plumbing/event handling
+             */
+//            $('#addParticipantButton').on('click', function() {
+//                add();
+//            });
+
+            user = $('#particpantNameInput').val();
+            $('.participantName').text(user);
+
+            $('#newChatroomButton').on('click', function(evt) {
+                var newChatroomName = $('#newChatroomNameInput').val();
+                var welcomeMessage = $('#welcomeMessageInput').val();
+                console.log("Creating new chatroom with name:" + newChatroomName);
+                DEMO.chatroom.createChat(newChatroomName, welcomeMessage, user, updateChats);
+            });
+
+            /** List the chats **/
+            DEMO.chatroom.listChats(updateChats);
+
         }
+
 
 //        function add() {
 //            var participant = $('#participantInput').val();
@@ -148,53 +124,94 @@
         function updateChats(rooms) {
             var $list = $('#chatroomList');
             $list.empty();
-            $list.append('<table class="table">');
             $.each(rooms, function(index, chatRoom) {
                 $list.append(
                         '<tr>' +
-                                '<td>' + chatRoom.name + '</td>' +
+                                '<td width="60%">' + chatRoom.welcomeMessage + '</td>' +
+                                '<td><button class="btn btn-primary chatroomLink" data-id="' + chatRoom.id + '">' + chatRoom.name + '</button></td>' +
                         '</tr>'
 
                 );
             });
 
-            $list.append('</table>');
+            $('#userModalWrapper').modal('hide');
+            $('.chatroomLink').on('click', function(evt) {
+                console.log("Launching modal for chat id:" + evt.currentTarget.dataset.id);
+
+            });
         }
+
+        DEMO = window.DEMO || {};
+        DEMO.chatroom = (function() {
+            var _ = {};
+
+            _.addChatUser = function(handle, callback) {
+                MAKAI.Server.invokeMakaiMethod("/chatroomAPI", "addUser", callback);
+            }
+
+            _.listChats = function(callback) {
+                MAKAI.Server.invokeMakaiMethod("/chatroomAPI", "list", callback);
+            }
+
+            _.joinChat = function(id) {
+                /** Add listener for chat messages **/
+                if (id == undefined || id.length == 0) {
+                    throw new Error("ID is required to join room.");
+                }
+
+            }
+
+            _.createChat = function(name, welcomeMessage, user, callback) {
+                /** Create a new chat, and join it **/
+//                var chatroom = {
+//                    welcomeMessage: welcomeMessage,
+//                    name: name,
+//                    createdBy: {
+//                        handle: user
+//                    }
+//                }
+                var chatroom=  {};
+                chatroom.welcomeMessage = welcomeMessage;
+                chatroom.name = name;
+                chatroom.user = {};
+                chatroom.user.handle = user;
+
+                MAKAI.Server.sendServerMakaiMessage("/chatroomAPI", "createChat", callback, chatroom);
+            }
+            return _;
+        })();
 
     </script>
 
 </head>
 <body style="padding: 10px">
     <div class="page-header">
-        <h1>Chatroom Example<small>  Demonstrating @Store and friends</small></h1>
+        <h1>Chatroom Example<small>  Demonstrating @Store and friends to <span class="participantName"></span></small></h1>
     </div>
     <div>
+        <p>Welcome <span class="participantName"></span>, please select a chatroom to join, or create your own!</p>
+
+    </div>
+
+    <!-- This gets dynamically filled in the updateChats method based on server 'list' -->
+    <div>
+        <table class="table-bordered" id="chatroomList">
+        </table>
+    </div>
+
+    <div>
         <div class="control-group">
-        <form class="form-inline">
-            <label>Room Name: </label>
-            <input type="text" class="input-medium" placeholder="Room Name"><button class="btn">create chat room</button>
-
-        </form>
-    </div>
-    <div id="leaderboardWrapper">
-        <div id="leaderBoard">
+            <form class="form-inline">
+                <label>Room Name: </label>
+                <input type="text" class="input-medium" id="newChatroomNameInput" placeholder="Room Name">
+                <input type="text" class="input-medium" id="welcomeMessageInput" placeholder="Welcome Message">
+                <button class="btn" id="newChatroomButton">create chat room</button>
 
 
-            <button class="btn">list chat rooms</button> chat rooms<button class="btn">join</button>
-
-
-            listen for messages for rooms I belong to
-
-            you are a User because you made a socket connection. The socket connection should receive
-            a User and wrap it in @Service and pushes messages
+            </form>
         </div>
-    </div>
-    <br />
 
-    <div id="chatroomList">
-    </div>
-
-    <div style="clear: both">
+    <!--div style="clear: both">
         <form onsubmit="return false">
             <label for="participantInput">Participant:</label>
             <input type="text" id="participantInput" name="participantInput" placeholder="enter name" />
@@ -202,7 +219,7 @@
             <input type="text" id="scoreInput" name="scoreInput" placeholder="enter score" />
             <button id="addParticipantButton">add/update</button>
         </form>
-    </div>
+    </div-->
     <br />
     <hr/>
     <div id="messages" style="margin: auto; clear: both"></div>
@@ -213,7 +230,7 @@
                 <h3 id="myModalLabel">Enter a Handle (user name)</h3>
             </div>
             <div class="modal-body">
-                <input type="text" class="input-medium" placeholder="user handle" />
+                <input type="text" id="particpantNameInput" class="input-medium" placeholder="user handle" />
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" id="showChatsList">show chats list</button>

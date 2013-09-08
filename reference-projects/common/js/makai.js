@@ -24,16 +24,20 @@ MAKAI.Server = (function() {
 
     //Basic logger, div and console.
     function log(message, object) {
+        if ($(defaultLogNode).length) {
+            $(defaultLogNode).append("<table id='makaiLogging' class='table-striped'>");
+//            $(defaultLogNode)
+            $('#makaiLogging').append("<tr><td>message</td><td style='width: 2px; background-color:black'></td><td>object</td></tr>");
+            $(defaultLogNode).append("</table>");
+        }
         if (object) {
             console.log(message, object);
         } else {
             console.log(message);
         }
 
-        if ($(defaultLogNode).length) {
-            $(defaultLogNode).append("<div style='border: solid ; overflow: auto'>");
-            $(defaultLogNode).append(message).append(JSON.stringify(object));
-            $(defaultLogNode).append("</div><br />");
+        if ($('#makaiLogging').length) {
+            $('#makaiLogging tr:last').after('<tr><td>' + message + '</td><td width="2px" style="background-color:black"></td><td>' + JSON.stringify(object) + '</td></tr>');
         }
     }
 
@@ -145,6 +149,7 @@ MAKAI.Server = (function() {
                     onClose(closeEvent);
                 }
             }
+            closeEvent.stopPropagation();
         }
 
         server.webSocket = client.makaiSocket;
@@ -217,7 +222,15 @@ MAKAI.Server = (function() {
         list.push({});              //rampHeaders
         list.push(config.serviceName);     //address
         list.push(config.methodName);      //methodName
-        list.push(config.arguments);
+//        list.push(config.arguments);
+        if($.isArray(config.arguments)) {
+            for (var index=0; index < config.arguments.length; index++) {
+                var obj = config.arguments[index];
+                list.push(obj);
+            }
+        } else {
+            list.push([config.arguments]);
+        }
 
         log("Sending[" + thisMessageId + "]:", list);
         if (client.makaiSocket.readyState == WebSocket.OPEN) {
