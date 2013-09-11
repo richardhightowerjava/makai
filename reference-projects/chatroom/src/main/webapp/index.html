@@ -9,7 +9,9 @@
 
     <script type="text/javascript">
 
-        var user = undefined;
+        var _user = undefined;
+        var _rooms = undefined;
+        var _activeRoom = undefined;
 
         $(function() {
             //Configure a webservice url for the Makai web service.
@@ -39,8 +41,8 @@
                     .registerSocket(wssUrl, options, serverMessages)
                     .done(function() {
                         //Socket is open, get the initial list.
-                        //Check to see if there is a user yet, if not, force one.
-                        if (user == undefined) {
+                        //Check to see if there is a _user yet, if not, force one.
+                        if (_user == undefined) {
                             $('#userModalWrapper').modal('show');
                             $('#showChatsList').on('click', setup);
                         } else {
@@ -51,7 +53,7 @@
                         // Register a listener for callbacks fired in the service.
                         // Note: This does NOT trigger any events or server responses, it just registers this
                         // connection with the service class which can subsequently notify this page of certain events.
-                        //MAKAI.Server.registerClientListener("/chatroomAPI", "registerActiveRoomWithUser");
+                        MAKAI.Server.registerClientListener("/chatroomAPI", "subscribeActiveUser");       //TODO: Make User part of this if possible
                     })
                     .fail(function() {
                         console.log("oops");
@@ -62,122 +64,192 @@
 
         /**
          * So there is an interesting note around how callbacks are delivered from the server
-         * and how we expect the client to handle them. Basically it seems that if we have
+         * and how we expect the client to handle them. Basicall, if we have
          * registered for server messages ala "MAKAI.Server.registerClientListener" then we should
          * probably need to have a "front controller" type of function listener for those "send" responses
          * from the server and decide what to do with them by wrapper type or some sub content therein -
-         * the implementation will drive this.
+         * the implementation will drive this.  In this case we have a single object on the server, ChatroomCallbacks
+         * which hosts the various callbacks that drive content over the socket back to the UI.
          * @param data
          */
         function serverMessages(method, data) {
             console.log("server side method " + method + " returned ", data);
-            if (method == "messageFromServer") {
-                updateScoreboard(data);
+            if (method == "sendRoomList") {
+                updateRoomList(data);
+            } else if (method == "sendMessage") {
+                if (_activeRoom.id == data[0]) {
+                    receiveMessage(data[1]);
+                }
             }
         }
 
         function setup() {
 
-            /**
-             * Misc plumbing/event handling
-             */
-//            $('#addParticipantButton').on('click', function() {
-//                add();
-//            });
+            //Get the user data and store it global
+            _user = $('#particpantNameInput').val();
+            $('.participantName').text(_user);
 
-            user = $('#particpantNameInput').val();
-            $('.participantName').text(user);
-
+            //Attach a handler to the create chat button.
             $('#newChatroomButton').on('click', function(evt) {
                 var newChatroomName = $('#newChatroomNameInput').val();
                 var welcomeMessage = $('#welcomeMessageInput').val();
                 console.log("Creating new chatroom with name:" + newChatroomName);
-                DEMO.chatroom.createChat(newChatroomName, welcomeMessage, user, updateChats);
+                DEMO.chatroom.createChat(newChatroomName, welcomeMessage, _user, updateRoomList);
+                $('#newChatroomNameInput').val("");
+                $('#welcomeMessageInput').val("");
             });
 
             /** List the chats **/
-            DEMO.chatroom.listChats(updateChats);
+            DEMO.chatroom.listChats(updateRoomList);
 
         }
 
-
-//        function add() {
-//            var participant = $('#participantInput').val();
-//            var score = $('#scoreInput').val();
-//            if (isNaN(score )) {
-//                alert("Invalid score. Try again.");
-//                return false;
-//            }
-//            var newEntry = {};
-//            newEntry.participant = participant;
-//            newEntry.score = new Number(score);
-//
-//            MAKAI.Server.invokeMakaiMethod("/chatroomService", "addBoardEntry", undefined, newEntry);
-//        }
-//
-//        function removeBoardEntry(participantName) {
-//            var discardPile = {};
-//            discardPile.participant = participantName;
-//            MAKAI.Server.invokeMakaiMethod("/chatroomService", "removeBoardEntry", undefined, discardPile);
-//        }
-
-        function updateChats(rooms) {
+        function updateRoomList(rooms) {
+            _rooms = rooms[0];
             var $list = $('#chatroomList');
             $list.empty();
-            $.each(rooms, function(index, chatRoom) {
+            $.each(_rooms, function(index, chatRoom) {
                 $list.append(
                         '<tr>' +
-                                '<td width="60%">' + chatRoom.welcomeMessage + '</td>' +
-                                '<td><button class="btn btn-primary chatroomLink" data-id="' + chatRoom.id + '">' + chatRoom.name + '</button></td>' +
+                                '<td width="60%">' + chatRoom.name + '</td>' +
+                                '<td><button class="btn btn-primary joinChatLink" data-id="' + chatRoom.id + '">' + "Join" + '</button> ' +
+                                '<button class="btn btn-warning removeChatLink"  data-id="' + chatRoom.id + '">delete</button></td>' +
                         '</tr>'
 
                 );
             });
 
             $('#userModalWrapper').modal('hide');
-            $('.chatroomLink').on('click', function(evt) {
-                console.log("Launching modal for chat id:" + evt.currentTarget.dataset.id);
+
+            setupMainPageUIHandlers();
+        }
+
+        function setupMainPageUIHandlers() {
+            $('.joinChatLink').on('click', function(evt) {
+                var roomId = evt.currentTarget.dataset.id;
+                _activeRoom = getRoom(roomId);
+                console.log("Launching modal for chat id:" + roomId);
+
+                //Set the name
+                $('#chatroomLabel').html(_activeRoom.name).append("<small>  " + _activeRoom.welcomeMessage + "</small>");
+
+                //Push in the welcome message
+                $('#chatMessages').empty();
+
+                //Join the room and register a message listenter
+                DEMO.chatroom.joinChat(roomId, receiveMessage);
+
+                //Show the room
+                $('#roomModalWrapper').modal('show');
+
+                //Scroll to bottom.
+                $("#chatMessagesWrapper").animate({ scrollTop: $('#chatMessagesWrapper')[0].scrollHeight}, 1000);
+
+                //Register listener for new message
+                $('#sendChatMessage').on('click', function() {
+                    DEMO.chatroom.sendMessage($('#newMessage').val(), _activeRoom.id);
+                    $("#newMessage").val("");
+                });
+            });
+
+            $('.removeChatLink').on('click', function(evt) {
+                var roomId = evt.currentTarget.dataset.id;
+                console.log("deleting room for chat id:" + roomId);
+
+                DEMO.chatroom.deleteChat(roomId, function() {
+                    var deleteMessage =
+                            '<div class="alert">' +
+                                    '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                                    '<strong>Warning!</strong>' + ' Room deleted! ' +
+                                    '</div>';
+
+                    $('#serverMessagesDiv').append(deleteMessage);
+                });
 
             });
+        }
+
+        function receiveMessage(message) {
+            if ($.isArray(message)) {
+                $.each(message[0], function(idx, data) {
+                    $('#chatMessages').append("<br />" + formatMessage(data.message, data.user, data.arrived));
+                });
+            } else {
+                $('#chatMessages').append("<br />" + formatMessage(message.message, message.user, message.arrived));
+            }
+            $("#chatMessagesWrapper").animate({ scrollTop: $('#chatMessagesWrapper')[0].scrollHeight}, 1000);
+        }
+
+        function formatMessage(message, user, time) {
+            return '<span class="chatMessage" style="color:' + getRandomColor() + '">'
+                    + (user ? user.handle : 'anonymous') + ": " + message + '</span>';
+        }
+
+        function getRandomColor() {
+            return '#'+Math.floor(Math.random()*16777215).toString(16);
+        }
+
+        function getRoom(id) {
+            var theRoom = undefined;
+            $.each(_rooms, function(idx, data) {
+                if (data.id == id) {
+                    theRoom = data;
+                    return;
+                }
+            });
+            return theRoom;
         }
 
         DEMO = window.DEMO || {};
         DEMO.chatroom = (function() {
             var _ = {};
 
-            _.addChatUser = function(handle, callback) {
-                MAKAI.Server.invokeMakaiMethod("/chatroomAPI", "addUser", callback);
-            }
-
             _.listChats = function(callback) {
                 MAKAI.Server.invokeMakaiMethod("/chatroomAPI", "list", callback);
             }
 
-            _.joinChat = function(id) {
+            _.joinChat = function(roomId, messagesCallback) {
                 /** Add listener for chat messages **/
-                if (id == undefined || id.length == 0) {
+                if (roomId == undefined || roomId.length == 0) {
                     throw new Error("ID is required to join room.");
                 }
 
+                //Get current messages
+                MAKAI.Server.invokeMakaiMethod("/chatroomAPI", "getMessages", messagesCallback, roomId);
+
+                //Register listener for any new messages
+                MAKAI.Server.registerClientListener("/chatroomAPI", "joinChat", roomId);
+
             }
 
-            _.createChat = function(name, welcomeMessage, user, callback) {
+            _.createChat = function(name, welcomeMessage, user) {
                 /** Create a new chat, and join it **/
-//                var chatroom = {
-//                    welcomeMessage: welcomeMessage,
-//                    name: name,
-//                    createdBy: {
-//                        handle: user
-//                    }
-//                }
-                var chatroom=  {};
-                chatroom.welcomeMessage = welcomeMessage;
-                chatroom.name = name;
-                chatroom.user = {};
-                chatroom.user.handle = user;
+                //Create as a JSON object
+                var chatroom = {
+                    welcomeMessage: welcomeMessage,
+                    name: name,
+                    createdBy: {
+                        handle: user
+                    }
+                }
 
-                MAKAI.Server.sendServerMakaiMessage("/chatroomAPI", "createChat", callback, chatroom);
+                MAKAI.Server.sendServerMakaiMessage("/chatroomAPI", "createChat", chatroom);
             }
+
+            _.deleteChat = function(roomId, callback) {
+                MAKAI.Server.invokeMakaiMethod("/chatroomAPI", "deleteChat", callback, roomId);
+            }
+
+            _.sendMessage = function(message, roomId) {
+                var messageToSend = {
+                    user: {
+                        handle: _user
+                    },
+                    message: message
+                }
+                MAKAI.Server.sendServerMakaiMessage("/chatroomAPI", "sendMessage", [messageToSend, roomId]);
+            }
+
             return _;
         })();
 
@@ -192,16 +264,17 @@
         <p>Welcome <span class="participantName"></span>, please select a chatroom to join, or create your own!</p>
 
     </div>
+    <div id="serverMessagesDiv"></div>
 
     <!-- This gets dynamically filled in the updateChats method based on server 'list' -->
     <div>
-        <table class="table-bordered" id="chatroomList">
+        <table class="table table-bordered" style="width:80%" id="chatroomList">
         </table>
     </div>
 
     <div>
         <div class="control-group">
-            <form class="form-inline">
+            <form class="form-inline" onsubmit="return false;">
                 <label>Room Name: </label>
                 <input type="text" class="input-medium" id="newChatroomNameInput" placeholder="Room Name">
                 <input type="text" class="input-medium" id="welcomeMessageInput" placeholder="Welcome Message">
@@ -210,18 +283,9 @@
 
             </form>
         </div>
-
-    <!--div style="clear: both">
-        <form onsubmit="return false">
-            <label for="participantInput">Participant:</label>
-            <input type="text" id="participantInput" name="participantInput" placeholder="enter name" />
-            <label for="participantInput">Score:</label>
-            <input type="text" id="scoreInput" name="scoreInput" placeholder="enter score" />
-            <button id="addParticipantButton">add/update</button>
-        </form>
-    </div-->
     <br />
     <hr/>
+    <div id="spacer" style="width:100%; height:500px"></div>
     <div id="messages" style="margin: auto; clear: both"></div>
 
 
@@ -243,14 +307,16 @@
                 <h3 id="chatroomLabel">{{Chat Room Name}}</h3>
             </div>
             <div class="modal-body">
-                <div id="chatMessages"></div>
+                <div id=chatMessagesWrapper style="height: 300px; max-height: 300px; overflow: auto">
+                    <div id="chatMessages"></div>
+                </div>
                 <div id="inputDiv">
-                    <textarea rows="3"></textarea>
+                    <textarea style="width: 100%" rows="3" id="newMessage"></textarea>
                 </div>
             </div>
             <div class="modal-footer">
                 <!--button class="btn" data-dismiss="modal" aria-hidden="true">Close</button-->
-                <button class="btn btn-primary">send</button>
+                <button class="btn btn-primary" id="sendChatMessage">send</button>
             </div>
         </div>
 

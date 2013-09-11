@@ -1,7 +1,5 @@
 package com.caucho.makai.example;
 
-import io.makai.core.Service;
-
 import java.util.Map;
 
 /**

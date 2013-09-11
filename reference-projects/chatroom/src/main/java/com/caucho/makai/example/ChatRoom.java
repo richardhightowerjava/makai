@@ -13,7 +13,7 @@ public class Chatroom implements Serializable {
     private User createdBy;
     private String name;
     private List<User> users = new ArrayList<>();
-    private Deque<Message> messages = new ArrayDeque<>(100);
+    private List<Message> messages = new ArrayList<>();
 
     public Chatroom() {
 
@@ -62,5 +62,16 @@ public class Chatroom implements Serializable {
 
     public void setWelcomeMessage(String welcomeMessage) {
         this.welcomeMessage = welcomeMessage;
+    }
+
+    public List<Message> getMessages() {
+        if (messages == null) {
+            messages = new ArrayList<>();
+        }
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
     }
 }

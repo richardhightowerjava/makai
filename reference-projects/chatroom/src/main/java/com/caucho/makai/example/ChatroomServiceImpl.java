@@ -1,7 +1,7 @@
 package com.caucho.makai.example;
 
-import io.makai.core.*;
-import io.makai.store.StoreService;
+import io.baratine.core.*;
+import io.baratine.store.StoreService;
 
 import javax.inject.Inject;
 import java.util.*;
@@ -68,7 +68,6 @@ public class ChatroomServiceImpl implements ChatroomService {
     public void init() {
         logger.info("CHATROOMSERVICE-ChatroomService init (@OnStart) called");
         intializeAndLoadRooms();
-        createFakeOneForDemoPurposes();
     }
 
     private void intializeAndLoadRooms() {
@@ -97,8 +96,9 @@ public class ChatroomServiceImpl implements ChatroomService {
             logger.info("CHATROOMSERVICE-Starting ChatRooms restore from Store");
             if (rooms == null) {
                 rooms = new HashMap<>();
-            }
-            rooms.put(key, value);
+            }               //TODO: Find out why key is always null here....
+            assert key == null;
+            rooms.put(value.getId(), value);
         }
     }
 
@@ -106,6 +106,7 @@ public class ChatroomServiceImpl implements ChatroomService {
         @Override
         public void completed(Boolean aBoolean) {
             logger.info("CHATROOMSERVICE-ChatRoomResult - probably called from loadAll? result:" + aBoolean);
+            createFakeOneForDemoPurposes();
         }
     }
 
