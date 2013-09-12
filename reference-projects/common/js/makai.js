@@ -89,6 +89,15 @@ MAKAI.Server = (function() {
                 //Check for listener
                 var call = callQueue[incomingMessageId];
 
+                //Firefox the .returnValue is not presented/is undefined
+                //This is a hack workaround....to figure out later
+                if (navigator.userAgent.indexOf("Firefox") > -1) {
+                    if (messageEvent.returnValue === undefined) {
+                        messageEvent.returnValue = true;
+                    }
+                }
+
+
                 if (call && messageEvent.returnValue) {
                     if (call.callback) call.callback(data);
                     delete callQueue[incomingMessageId];
